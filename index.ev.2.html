@@ -1,9 +1,284 @@
 <!DOCTYPE html>
-<html>
+<html lang="ro">
 <head>
-    <title>Evaluare Nr2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raport Evaluare Nr.2</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f0f2f5;
+        }
+        h1 {
+            color: #1a73e8;
+            border-bottom: 3px solid #1a73e8;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2c3e50;
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .section {
+            background: white;
+            margin: 25px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .step {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #28a745;
+            border-radius: 0 8px 8px 0;
+        }
+        .step h3 {
+            margin-top: 0;
+            color: #28a745;
+        }
+        img {
+            max-width: 100%;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            margin: 10px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Consolas', monospace;
+        }
+        .badge {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-right: 10px;
+        }
+        .git-command {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+    </style>
 </head>
 <body>
-    <h1>Raport Evaluare</h1>
+    <h1>📊 Raport Evaluare Nr.2</h1>
+    <p><strong>Nume:</strong> [Numele Dvs.]</p>
+    <p><strong>Data:</strong> <span id="data"></span></p>
+    <p><strong>Git Version:</strong> 2.53.0.windows.1</p>
+
+    <script>
+        document.getElementById('data').innerText = new Date().toLocaleDateString('ro-RO');
+    </script>
+
+    <div class="section">
+        <h2>📁 I. Commit - Operațiuni de bază</h2>
+        
+        <div class="step">
+            <h3><span class="badge">1</span> Creare repository GitHub</h3>
+            <img src="screenshots/1-repo-created.png" alt="Repository creat pe GitHub">
+            <p>Repository-ul <code>Evaluare-Nr2</code> a fost creat pe GitHub fără fișiere inițiale.</p>
+        </div>
+
+        <div class="step">
+            <h3><span class="badge">2</span> Clonare repository</h3>
+            <div class="git-command">git clone https://github.com/[username]/Evaluare-Nr2.git</div>
+            <img src="screenshots/2-git-clone.png" alt="Comanda git clone">
+        </div>
+
+        <div class="step">
+            <h3><span class="badge">3</span> Adăugare settings.xml și commit</h3>
+            <div class="git-command">
+                git add settings.xml<br>
+                git commit -m "Commit file settings.xml"
+            </div>
+            <img src="screenshots/3-commit-settings.png" alt="Commit settings.xml">
+        </div>
+
+        <div class="step">
+            <h3><span class="badge">4</span> Redenumire fișier</h3>
+            <div class="git-command">git mv settings.xml configuration.xml</div>
+            <img src="screenshots/4-git-mv.png" alt="Git mv command">
+        </div>
+
+        <div class="step">
+            <h3><span class="badge">5</span> Commit configurație</h3>
+            <div class="git-command">git commit -m "Commit configuration.xml"</div>
+            <img src="screenshots/5-commit-config.png" alt="Commit configuration.xml">
+        </div>
+
+        <div class="step">
+            <h3><span class="badge">6</span> Modificare comentariu commit</h3>
+            <div class="git-command">git commit --amend -m "Commit file configuration.xml"</div>
+            <img src="screenshots/6-git-amend.png" alt="Git amend commit">
+        </div>
+
+        <div class="step">
+            <h3><span class="badge">7</span> Push către remote</h3>
+            <div class="git-command">git push origin master</div>
+            <img src="screenshots/7-git-push.png" alt="Git push">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🌐 II. Commit - Operațiuni remote</h2>
+        
+        <div class="step">
+            <h3><span class="badge">1</span> Adăugare page1.html pe GitHub</h3>
+            <img src="screenshots/8-page1-remote.png" alt="page1.html creat remote">
+        </div>
+
+        <div class="step">
+            <h3><span class="badge">2</span> Pull modificări</h3>
+            <div class="git-command">git pull origin master</div>
+            <img src="screenshots/9-git-pull.png" alt="Git pull">
+        </div>
+
+        <div class="step">
+            <h3><span class="badge">3</span> Verificare istoric</h3>
+            <div class="git-command">git log --oneline</div>
+            <img src="screenshots/10-git-log.png" alt="Git log">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🔀 I. Branch - Operațiuni</h2>
+        
+        <div class="step">
+            <h3><span class="badge">1</span> Creare branch stage</h3>
+            <div class="git-command">
+                git checkout -b stage<br>
+                git push origin stage
+            </div>
+            <img src="screenshots/11-branch-stage.png" alt="Branch stage creat">
+        </div>
+
+        <div class="step">
+            <h3><span class="badge">2</span> Creare hosts.xml în branch stage</h3>
+            <div class="git-command">
+                git add hosts.xml<br>
+                git commit -m "Commit file hosts.xml"<br>
+                git push origin stage
+            </div>
+            <img src="screenshots/12-hosts-xml.png" alt="hosts.xml creat">
+        </div>
+
+        <div class="step">
+            <h3><span class="badge">3</span> Merge stage în master</h3>
+            <div class="git-command">
+                git checkout master<br>
+                git merge stage<br>
+                git push origin master
+            </div>
+            <img src="screenshots/13-merge-stage.png" alt="Merge stage in master">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🔀 II. Branch - Operațiuni avansate</h2>
+        
+        <div class="step">
+            <h3><span class="badge">1</span> Creare branch dev din stage</h3>
+            <div class="git-command">
+                git checkout stage<br>
+                git checkout -b dev
+            </div>
+            <img src="screenshots/14-branch-dev.png" alt="Branch dev creat">
+        </div>
+
+        <div class="step">
+            <h3><span class="badge">2</span> Creare env.txt și commit</h3>
+            <div class="git-command">
+                git add env.txt<br>
+                git commit -m "Commit file env.txt"
+            </div>
+            <img src="screenshots/15-env-txt.png" alt="env.txt creat">
+        </div>
+
+        <div class="step">
+            <h3><span class="badge">3</span> Merge dev în stage</h3>
+            <div class="git-command">
+                git checkout stage<br>
+                git merge dev<br>
+                git push origin stage
+            </div>
+            <img src="screenshots/16-merge-dev.png" alt="Merge dev in stage">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🔀 III. Branch - Redenumire</h2>
+        
+        <div class="step">
+            <h3><span class="badge">1</span> Redenumire dev în develop</h3>
+            <div class="git-command">
+                git branch -m dev develop<br>
+                git push origin -u develop<br>
+                git push origin --delete dev
+            </div>
+            <img src="screenshots/17-rename-branch.png" alt="Branch redenumit">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>✅ Verificare finală</h2>
+        
+        <div class="step">
+            <h3>Arbore Git complet</h3>
+            <div class="git-command">git log --oneline --graph --all</div>
+            <img src="screenshots/18-git-graph.png" alt="Git graph complet">
+        </div>
+
+        <div class="step">
+            <h3>Toate branch-urile</h3>
+            <div class="git-command">git branch -a</div>
+            <img src="screenshots/19-git-branch.png" alt="Lista branch-uri">
+        </div>
+
+        <div class="step">
+            <h3>Fișiere în repository</h3>
+            <div class="git-command">ls -la</div>
+            <img src="screenshots/20-ls-files.png" alt="Lista fișiere">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📋 Rezumat operațiuni efectuate</h2>
+        <ul>
+            <li>✅ Repository creat pe GitHub: <code>Evaluare-Nr2</code></li>
+            <li>✅ Fișiere create: <code>index.ev.2.html</code>, <code>settings.xml</code> → <code>configuration.xml</code>, <code>page1.html</code>, <code>hosts.xml</code>, <code>env.txt</code></li>
+            <li>✅ Branch-uri create: <code>stage</code>, <code>dev</code> → <code>develop</code></li>
+            <li>✅ Merge-uri efectuate: <code>stage → master</code>, <code>dev → stage</code></li>
+            <li>✅ Push-uri către remote pentru toate branch-urile</li>
+            <li>✅ Git amend folosit pentru modificarea comentariului</li>
+            <li>✅ Redenumire branch local și remote</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🔗 Link-uri utile</h2>
+        <p><strong>Repository GitHub:</strong> <a href="https://github.com/[username]/Evaluare-Nr2">https://github.com/[username]/Evaluare-Nr2</a></p>
+        <p><strong>GitHub Pages:</strong> <a href="https://[username].github.io/Evaluare-Nr2/">https://[username].github.io/Evaluare-Nr2/</a></p>
+    </div>
 </body>
 </html>
